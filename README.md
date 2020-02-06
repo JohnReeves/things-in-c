@@ -7,6 +7,7 @@ eg:
 * images;   
 * geometry;   
 * quizzes;   
+* time;   
 
 
 ie anything kids are asked to do in Python in school, they could easily do in c
