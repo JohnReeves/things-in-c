@@ -1,4 +1,3 @@
-// Type your code here, or load an example.
 #include <stdio.h>
 
 typedef struct {
@@ -16,9 +15,16 @@ question quizz[5] = {\
 
 int main(){
     printf("hello\n");
+    char * answer;
 
     for (int i = 0; i < 5; i++){
-        printf("%s %s\n",quizz[i].q,quizz[i].a);
-
+        printf("What is the capital of %s ?\n >>", quizz[i].q);
+        fgets(answer,10,stdin);
+        printf("%s \n", answer);
+        if (answer == quizz[i].a){
+            printf("that's correct!\n");
+        } else {
+            printf("that's wrong!\n");
+        }
    }
 }
