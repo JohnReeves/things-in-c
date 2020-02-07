@@ -14,7 +14,7 @@ question quizz[5] = {\
 };
 
 int main(){
-    char * answer;
+    char answer[10];
     char name[10];
     int score = 0;
     int out_of = sizeof(quizz)/sizeof(quizz[0]);
