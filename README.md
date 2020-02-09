@@ -8,6 +8,10 @@ eg:
 * geometry;   
 * quizzes;   
 * time;   
+* maths questions;   
+* calculator;   
+* rpn calculator;   
+* rock-paper-scissors;   
 
 
 ie anything kids are asked to do in Python in school, they could easily do in c
