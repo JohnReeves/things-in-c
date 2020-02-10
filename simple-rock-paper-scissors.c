@@ -9,6 +9,16 @@ char * elements[3]={"rock","paper","scissors"};
 
 int main(void) 
 {
+
+  char name[10];
+  
+  printf("type in your name: ");
+  fgets(name, 10, stdin);    
+
   printf("%s\n", rules);
+  printf("%s\n", choices);
+
+
+
   return 0;
 } 
