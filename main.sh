@@ -21,8 +21,8 @@ echo '+------------------+'
 # gcc hello.c -o ./Results/hello
 # ./Results/hello
 
-clang-7 -pthread -lm -o quizz simple-quizz.c
-./quizz
+# clang-7 -pthread -lm -o quizz simple-quizz.c
+# ./quizz
 
 clang-7 -pthread -lm -o rock simple-rock-paper-scissors.c
 ./rock
