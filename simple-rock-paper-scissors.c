@@ -3,7 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-char rules[]="Winning Rules of the Rock paper scissor game as follows:\nRock vs paper->paper wins\nRock vs scissor->Rock wins\npaper vs scissor->scissor wins\n";
+char rules[]="Winning Rules of the Rock paper scissor game are:\nRock vs paper->paper wins\nRock vs scissor->Rock wins\npaper vs scissor->scissor wins\n";
 
 char choices[]="Enter choice:\n1. Rock\n2. Paper\n3. Scissors\n";
 
@@ -16,10 +16,10 @@ int main(void)
   int play_again=1;
   int user_choice, comp_choice;
   
-  printf("type in your name: ");
+  printf("What is your name: ");
   fgets(name, 10, stdin);    
 
-  printf("%s\n", rules);
+  printf("Hi %s, \nThe %s\n", name, rules);
 
   while (play_again == 1){
     printf("%s\n", choices);
@@ -35,16 +35,16 @@ int main(void)
     }
 
     user_choice -= 1; // convert to array index
-    printf("user choice is: %s", elements[user_choice]);
-    printf("\nNow its computer turn.......");
+    printf("Your choice is: %s", elements[user_choice]);
+    printf("\nNow its the computer's turn.......\n");
 
     comp_choice = rand() % 3;
     while (comp_choice == user_choice){
       comp_choice = rand() % 3;
     }
 
-    printf("Computer choice is: %s ", elements[comp_choice]);
-    printf("%s vs %s",elements[user_choice],elements[comp_choice]);
+    printf("Computer choice is: %s\n ", elements[comp_choice]);
+    printf("%s vs %s\n",elements[user_choice],elements[comp_choice]);
 
     // compare guesses
 
