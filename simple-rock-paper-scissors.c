@@ -23,7 +23,28 @@ int main(void)
     printf("%s\n", choices);
 
     //play the game
+    // choices
+    printf("Your turn: ");
+    scanf("%d", &user_choice);   
 
+    while ((user_choice > 3) || (user_choice < 1)){
+      printf("Give a valid choice: ");
+      scanf("%d", &user_choice);
+    }
+
+    user_choice -= 1 // convert to array index
+    printf("user choice is: %s", elements[user_choice]);
+    printf("\nNow its computer turn.......");
+
+    comp_choice = random.randint(0, 2)
+    while (comp_choice == user_choice){
+      comp_choice = random.randint(0, 2)
+    }
+
+    printf("Computer choice is: %s ", elements[comp_choice]);
+    printf("%s vs %s",elements[user_choice],elements[comp_choice]);
+    
+    // compare guesses
 
     //repeat?
     printf("Do you want to play again?\n");
