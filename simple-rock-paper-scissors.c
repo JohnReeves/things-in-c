@@ -2,6 +2,7 @@
 #include <string.h>
 #include <time.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 char rules[]="Winning Rules of the Rock paper scissor game are:\nRock vs paper->paper wins\nRock vs scissor->Rock wins\npaper vs scissor->scissor wins\n";
 
@@ -15,6 +16,7 @@ int main(void)
   char name[10];
   int play_again=1;
   int user_choice, comp_choice;
+  char * result;
   
   printf("What is your name: ");
   fgets(name, 10, stdin);    
@@ -36,7 +38,8 @@ int main(void)
 
     user_choice -= 1; // convert to array index
     printf("Your choice is: %s", elements[user_choice]);
-    printf("\nNow its the computer's turn.......\n");
+    printf("\n\nNow its the computer's turn.......\n");
+    sleep(1);
 
     comp_choice = rand() % 3;
     while (comp_choice == user_choice){
@@ -44,34 +47,40 @@ int main(void)
     }
 
     printf("Computer choice is: %s\n ", elements[comp_choice]);
-    printf("%s vs %s\n",elements[user_choice],elements[comp_choice]);
+    printf("\n%s vs %s\n",elements[user_choice],elements[comp_choice]);
 
     // compare guesses
     // paper & rock
-    if((user_choice == 0 and comp_choice == 1) or
-       (user_choice == 1 and comp_choice == 0 )): 
-        print("paper wins => ") 
-        result = elements[1] # "paper"
-    // scissors & rock
-    elif((user_choice == 0 and comp_choice == 2) or
-         (user_choice == 2 and comp_choice == 0)): 
-        print("Rock wins =>") 
-        result = elements[0] # "rock"
-    // scissors & paper?
-    else: 
-        print("scissor wins =>") 
-        result = elements[2] # "scissors"
-    // what about the draw?
+    if((user_choice == 0 && comp_choice == 1) ||
+       (user_choice == 1 && comp_choice == 0 )) {
+        printf("\nPaper wins =>\n");
+        result = elements[1]; // "paper"
+    }
 
-    if result == elements[user_choice]: 
-        print("<== User wins ==>") 
-    else: 
-        print("<== Computer wins ==>") 
+    // scissors & rock
+    else if((user_choice == 0 && comp_choice == 2) ||
+            (user_choice == 2 && comp_choice == 0)){
+             printf("\nRock wins =>\n");
+             result = elements[0]; // "rock"
+    }
+
+    // scissors & paper?
+    else {
+        printf("\nScissor wins =>\n");
+        result = elements[2]; // "scissors"
+    }
+    // what about the draw?
+    sleep(2);
+    if (result == elements[user_choice]) 
+        printf("for you! ==>\n");
+    else
+        printf("for the Computer ==>\n");
  
     //repeat?
     printf("Do you want to play again?\n");
     printf("1 for yes; 2 for no: ");
-    scanf("%d", &play_again);   
+    scanf("%d", &play_again);
+    printf("\n");
   }
 
   printf("\nThank you for playing, %s.\nGoodbye\n", name);
