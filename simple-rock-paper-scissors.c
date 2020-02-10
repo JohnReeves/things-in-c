@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-#include <random.h>
+#include <time.h>
+#include <stdlib.h>
 
 char rules[]="Winning Rules of the Rock paper scissor game as follows:\nRock vs paper->paper wins\nRock vs scissor->Rock wins\npaper vs scissor->scissor wins\n";
 
@@ -10,9 +11,10 @@ char * elements[3]={"rock","paper","scissors"};
 
 int main(void) 
 {
+  srand(time(NULL));
   char name[10];
   int play_again=1;
-  int user_choice, computer_choice;
+  int user_choice, comp_choice;
   
   printf("type in your name: ");
   fgets(name, 10, stdin);    
@@ -32,18 +34,18 @@ int main(void)
       scanf("%d", &user_choice);
     }
 
-    user_choice -= 1 // convert to array index
+    user_choice -= 1; // convert to array index
     printf("user choice is: %s", elements[user_choice]);
     printf("\nNow its computer turn.......");
 
-    comp_choice = random.randint(0, 2)
+    comp_choice = rand() % 3;
     while (comp_choice == user_choice){
-      comp_choice = random.randint(0, 2)
+      comp_choice = rand() % 3;
     }
 
     printf("Computer choice is: %s ", elements[comp_choice]);
     printf("%s vs %s",elements[user_choice],elements[comp_choice]);
-    
+
     // compare guesses
 
     //repeat?
