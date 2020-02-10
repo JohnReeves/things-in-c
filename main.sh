@@ -5,7 +5,7 @@ cal
 echo '+------------------+'
 date +'%d/%m/%Y %H:%M:%S'
 echo '+------------------+'
-echo
+echo ' '
 
 # gcc -o sample sample.c
 # including any other gcc flags you like
@@ -13,10 +13,11 @@ echo
 
 echo "building: "
 echo '+------------------+'
-echo "simple-quizz.c"
+echo "simple-rock-paper-scissors.c"
 echo '+------------------+'
 echo "binaries in ./Results"
 echo '+------------------+'
+echo ' '
 
 # gcc hello.c -o ./Results/hello
 # ./Results/hello
