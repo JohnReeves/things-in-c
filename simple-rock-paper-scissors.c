@@ -22,8 +22,10 @@ int main(void)
   while (play_again == 1){
     printf("%s\n", choices);
 
+    //play the game
 
 
+    //repeat?
     printf("Do you want to play again?\n");
     printf("1 for yes; 2 for no: ");
     scanf("%d", &play_again);   
