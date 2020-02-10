@@ -47,7 +47,27 @@ int main(void)
     printf("%s vs %s\n",elements[user_choice],elements[comp_choice]);
 
     // compare guesses
+    // paper & rock
+    if((user_choice == 0 and comp_choice == 1) or
+       (user_choice == 1 and comp_choice == 0 )): 
+        print("paper wins => ") 
+        result = elements[1] # "paper"
+    // scissors & rock
+    elif((user_choice == 0 and comp_choice == 2) or
+         (user_choice == 2 and comp_choice == 0)): 
+        print("Rock wins =>") 
+        result = elements[0] # "rock"
+    // scissors & paper?
+    else: 
+        print("scissor wins =>") 
+        result = elements[2] # "scissors"
+    // what about the draw?
 
+    if result == elements[user_choice]: 
+        print("<== User wins ==>") 
+    else: 
+        print("<== Computer wins ==>") 
+ 
     //repeat?
     printf("Do you want to play again?\n");
     printf("1 for yes; 2 for no: ");
