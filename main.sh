@@ -29,4 +29,7 @@ echo ' '
 # ./rock
 
 clang-7 -pthread -lm -o rpn-calc simple-rpn-calc.c
+./rpn-calc
 ./rpn-calc 10
+./rpn-calc 10 10
+./rpn-calc 10 10 +
