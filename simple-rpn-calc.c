@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
     printf("Hello World!\n");
 
     // for each token in the postfix expression:
-    for (int i; i < argc; i++){
+    for (int i = 1; i < argc; i++){
       // if token is an operator:
       if (strcmp(argv[i],"+") == 0){
         printf("add\n");
