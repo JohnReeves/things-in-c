@@ -14,6 +14,7 @@ result ← pop from the stack
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 char * message[]={"Needs numbers and operators.",
                 "Invalid arguments >>",
@@ -30,24 +31,25 @@ int main(int argc, char* argv[]) {
     // for each token in the postfix expression:
     for (int i; i < argc; i++){
       // if token is an operator:
-      if (argv[i] == "+"){
+      if (strcmp(argv[i],"+") == 0){
         printf("add\n");
         // operand_2 ← pop from the stack
         // operand_1 ← pop from the stack
         // result ← evaluate token with operand_1 and operand_2
         // push result back onto the stack
       }
-      else if (argv[i] == "-"){
+      else if (strcmp(argv[i], "-") == 0){
         printf("subtract\n");
+
       }
-      else if (argv[i] == "*"){
+      else if (strcmp(argv[i], "*") == 0){
         printf("multiply\n");
 
       }
-      else if (argv[i] == "/"){
+      else if (strcmp(argv[i], "/") == 0){
         printf("divide\n");
 
-      }
+      
       // else if token is an operand:
       } else {
         printf("push a number\n");
