@@ -1,17 +1,17 @@
 ### things-in-c
 Anything kids are asked to do in Python at school, you can easily do in c .  
 
-Some examples of c programs that kids can do in repl.it:   
-* sorting;   
-* ciphers;   
-* images;   
-* geometry;   
-* quizzes;   
-* time;   
+Some examples of C programs from questions in school:   
+* rock-paper-scissors;   
+* quizz questions;   
 * maths questions;   
+* codes & ciphers;   
+* sorting;   
+* images;   
+* time;   
+* geometry;   
 * calculator;   
 * rpn calculator;   
-* rock-paper-scissors;   
 
 ### The Reverse Polish Calculator
 
