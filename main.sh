@@ -25,6 +25,8 @@ echo ' '
 # clang-7 -pthread -lm -o quizz simple-quizz.c
 # ./quizz
 
-clang-7 -pthread -lm -o rock simple-rock-paper-scissors.c
-./rock
+# clang-7 -pthread -lm -o rock simple-rock-paper-scissors.c
+# ./rock
 
+clang-7 -pthread -lm -o rpn-calc simple-rpn-calc.c
+./rpn-calc 10

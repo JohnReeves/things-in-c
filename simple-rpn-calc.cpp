@@ -12,10 +12,22 @@ for each token in the postfix expression:
 result ← pop from the stack
 */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
 
-int main(){
+using std::cout;
 
-  return 0;
+int main(int argc, char* argv[]) {
+
+  if (argc==0){
+    cout << "needs numbers and operators ";
+    return 0;
+  }
+  else if (argc==1){
+    cout << "invalid argument " << argv[1];
+  }
+  else {
+      cout << "Hello World!\n";
+  }
+
+return 0;
 }
