@@ -31,22 +31,26 @@ int main(int argc, char* argv[]) {
     for (int i; i < argc; i++){
       // if token is an operator:
       if (argv[i] == "+"){
+        printf("add\n");
         // operand_2 ← pop from the stack
         // operand_1 ← pop from the stack
         // result ← evaluate token with operand_1 and operand_2
         // push result back onto the stack
       }
       else if (argv[i] == "-"){
-
+        printf("subtract\n");
       }
       else if (argv[i] == "*"){
+        printf("multiply\n");
 
       }
       else if (argv[i] == "/"){
+        printf("divide\n");
 
       }
       // else if token is an operand:
       } else {
+        printf("push a number\n");
 
         // push token onto the stack
         // result ← pop from the stack     

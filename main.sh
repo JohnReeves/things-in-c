@@ -13,7 +13,7 @@ echo ' '
 
 echo "building: "
 echo '+------------------+'
-echo "simple-rock-paper-scissors.c"
+echo "simple-rpn-calc.c"
 echo '+------------------+'
 echo "binaries in ./Results"
 echo '+------------------+'
