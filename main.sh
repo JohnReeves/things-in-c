@@ -37,5 +37,10 @@ echo ' '
 #./rpn-calc 10 10 /
 #./rpn-calc 10 10 -
 
-g++ -o rpn-calcpp simple-rpn-calc.cpp
+# g++ -o rpn-calcpp simple-rpn-calc.cpp
 ./rpn-calcpp '10 10 +'
+./rpn-calcpp '10 10 -'
+./rpn-calcpp '10 10 *'
+./rpn-calcpp '10 10 /'
+./rpn-calcpp '3 4 / 5 * 2 -'
+./rpn-calcpp '3 4 / 5 10 * 2 -'
