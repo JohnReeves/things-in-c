@@ -18,22 +18,26 @@ result ← pop from the stack
 #include <regex>
 #include <stack>
 
-using std::cout;         // Alternatively, you can use
-using std::cin;          //  using namespace std;
-using std::endl;
-using std::string;
-using std::regex;
-using std::sregex_iterator;
-using std::stack;
+using namespace std;
+
+//using std::cout;         // Alternatively, you can use
+//using std::cin;          //  using namespace std;
+//using std::endl;
+//using std::string;
+//using std::regex;
+//using std::sregex_iterator;
+//using std::stack;
 
 void process_token(string s);
 stack<double> st;
 
-main() {
      string instr;
      string num_pattern("[0-9]+(\\.[0-9]*)?");
      string op_pattern("[+*/-]");
      regex re(num_pattern + "|" + op_pattern);
+     
+main() {
+
      while (true) {
          cout << "Enter expression (or ENTER to exit): ";
          getline(cin, instr);
