@@ -29,21 +29,20 @@ regex re(num_pattern + "|" + op_pattern);
 int main() {
 
   while (true) {
-    cout << "Enter expression (or ENTER to exit): ";
+    cout << "Expr: ";
     getline(cin, instr);
-
     if (instr.length() == 0) break;
 
     sregex_iterator it(instr.begin(), instr.end(), re);
     sregex_iterator it_end;
 
-    for (;it != it_end; ++it) process_token(it->str()){
-      if (s.find_first_not_of("+*/-") != s.npos) {
-        st.push(atof(s.c_str()));
+    for (;it != it_end; ++it) {
+      if (it->str().find_first_not_of("+*/-") != it->str().npos) {
+        st.push(atof(it->str().c_str()));
       } else {
         double op2 = st.top(); st.pop();
         double op1 = st.top(); st.pop();
-        switch(s[0]) {
+        switch(it->str()[0]) {
           case '+': st.push(op1 + op2); break;
           case '-': st.push(op1 - op2); break;
           case '*': st.push(op1 * op2); break;
@@ -51,7 +50,7 @@ int main() {
         }
       }
     }
-    if (!st.empty()) cout << "The value is: " << st.top() << endl;
+    if (!st.empty()) cout << "= " << st.top() << endl;
   }
   return 0;
 }
