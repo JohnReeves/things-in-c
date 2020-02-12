@@ -16,6 +16,7 @@ result ← pop from the stack
 #include <string>
 #include <regex>
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -39,10 +40,11 @@ int main(int argc, char **argv) {
         double op2 = st.top(); st.pop();
         double op1 = st.top(); st.pop();
         switch(it->str()[0]) {
-          case '+': st.push(op1 + op2); break;
-          case '-': st.push(op1 - op2); break;
-          case '*': st.push(op1 * op2); break;
-          case '/': st.push(op1 / op2); break;
+          case '+': st.push( op1 + op2 ); break;
+          case '-': st.push( op1 - op2 ); break;
+          case '*': st.push( op1 * op2 ); break;
+          case '/': st.push( op1 / op2 ); break;
+          //case 'p': st.push( pow(op1, op2) ); break;
         }
       }
     }
