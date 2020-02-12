@@ -13,7 +13,7 @@ echo ' '
 
 echo "building: "
 echo '+------------------+'
-echo "simple-rpn-calc.c"
+echo "simple-rpn-calc.cpp"
 echo '+------------------+'
 echo "binaries in ./Results"
 echo '+------------------+'
@@ -37,7 +37,7 @@ echo ' '
 #./rpn-calc 10 10 /
 #./rpn-calc 10 10 -
 
-# g++ -o rpn-calcpp simple-rpn-calc.cpp
+g++ -o rpn-calcpp simple-rpn-calc.cpp
 ./rpn-calcpp '10 10 +'
 ./rpn-calcpp '10 10 -'
 ./rpn-calcpp '10 10 *'

@@ -12,11 +12,10 @@ for each token in the postfix expression:
 result ← pop from the stack
 */
 
-#include <iostream>
-#include <string>
-#include <cctype>
-#include <regex>
 #include <stack>
+#include <string>
+#include <regex>
+#include <iostream>
 
 using namespace std;
 
@@ -27,7 +26,6 @@ string op_pattern("[+*/-]");
 regex re(num_pattern + "|" + op_pattern);
 
 int main(int argc, char **argv) {
-
     if (argc == 1) return 0;
 
     instr = argv[1];
