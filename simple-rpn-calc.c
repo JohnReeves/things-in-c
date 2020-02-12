@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
         printf("subtract\n");
 
       }
-      else if (strcmp(argv[i], "*") == 0){
+      else if (strcmp(argv[i], "x") == 0){
         printf("multiply\n");
 
       }

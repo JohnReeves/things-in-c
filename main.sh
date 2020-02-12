@@ -33,3 +33,9 @@ clang-7 -pthread -lm -o rpn-calc simple-rpn-calc.c
 ./rpn-calc 10
 ./rpn-calc 10 10
 ./rpn-calc 10 10 +
+./rpn-calc 10 10 x
+./rpn-calc 10 10 -
+./rpn-calc 10 10 /
+
+g++ -o rpn-calcpp simple-rpn-calc.cpp
+./rpn-calcpp
