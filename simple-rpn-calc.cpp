@@ -26,13 +26,11 @@ string num_pattern("[0-9]+(\\.[0-9]*)?");
 string op_pattern("[+*/-]");
 regex re(num_pattern + "|" + op_pattern);
 
-int main() {
+int main(int argc, char **argv) {
 
-  while (true) {
-    cout << "Expr: ";
-    getline(cin, instr);
-    if (instr.length() == 0) break;
+    if (argc == 1) return 0;
 
+    instr = argv[1];
     sregex_iterator it(instr.begin(), instr.end(), re);
     sregex_iterator it_end;
 
@@ -51,6 +49,5 @@ int main() {
       }
     }
     if (!st.empty()) cout << "= " << st.top() << endl;
-  }
   return 0;
 }

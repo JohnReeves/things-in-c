@@ -28,14 +28,14 @@ echo ' '
 # clang-7 -pthread -lm -o rock simple-rock-paper-scissors.c
 # ./rock
 
-clang-7 -pthread -lm -o rpn-calc simple-rpn-calc.c
-./rpn-calc
-./rpn-calc 10
-./rpn-calc 10 10
-./rpn-calc 10 10 +
-./rpn-calc 10 10 x
-./rpn-calc 10 10 -
-./rpn-calc 10 10 /
+#clang-7 -pthread -lm -o rpn-calc simple-rpn-calc.c
+#./rpn-calc
+#./rpn-calc 10
+#./rpn-calc 10 10
+#./rpn-calc 10 10 +
+#./rpn-calc 10 10 x
+#./rpn-calc 10 10 /
+#./rpn-calc 10 10 -
 
 g++ -o rpn-calcpp simple-rpn-calc.cpp
-./rpn-calcpp
+./rpn-calcpp '10 10 +'
