@@ -45,12 +45,8 @@ Which has fewer characters to type and is easier to process than the algebraic n
 
 `Pro-tip` RPN can also be the basis for your own domain specific language - even NLP where the sentences are arranged as `SOV` and not infixed as `SVO` .  
 
-.
-
-### The Algebraic Calculator
-
-Generally:   
-* convert infix to rp;   
-* use the stack machine.   
+`Pro-top` The Algebraic Calculator is often made by converting infix to reverse polish notation .  
 
 [Taken from the tree traversal wiki](https://en.wikipedia.org/wiki/Tree_traversal)
+
+.

@@ -22,7 +22,7 @@ using namespace std;
 
 stack<double> st;
 string instr;
-string num_pattern("[0-9]+(\\.[0-9]*)?");
+string num_pattern("(\\+|-)?[0-9]+(\\.[0-9]*)?");
 string op_pattern("[+*/-]");
 regex re(num_pattern + "|" + op_pattern);
 
