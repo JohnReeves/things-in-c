@@ -44,7 +44,8 @@ clang++ -std=c++11 -o rpn-calcpp simple-rpn-calc.cpp
 ./rpn-calcpp '-10 -10 +' # -20
 ./rpn-calcpp '10 10 -' # 0
 ./rpn-calcpp '10 10 *' # 100
-./rpn-calcpp '2 e *' # 100 seg fault
+./rpn-calcpp '2 e *' # 5.43656
+./rpn-calcpp '2 pi *' # 3.1415926
 ./rpn-calcpp '10 10 /' # 1
 ./rpn-calcpp '10 0 ^' # 1
 ./rpn-calcpp '10 1 ^' # 10
