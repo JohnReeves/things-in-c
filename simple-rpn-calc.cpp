@@ -23,7 +23,7 @@ using namespace std;
 stack<double> st;
 string instr;
 string num_pattern("(\\+|-)?[0-9]+(\\.[0-9]*)?");
-string sym_pattern("[(chi|pi|ln|e)]");
+string sym_pattern("[(chi|(pi)|ln|e)]");
 string op_pattern("[(\\*|\\/|\\+|\\-|\\^)]");
 regex re(num_pattern+"|"+op_pattern+"|"+sym_pattern);
 //regex re(num_pattern + "|" + op_pattern);
@@ -36,17 +36,14 @@ int main(int argc, char **argv) {
     sregex_iterator it_end;
 
     for (;it != it_end; ++it) {
-      if (it->str().find_first_not_of("+*/-^") != it->str().npos) {
-        if (strcmp(it->str().c_str(),"e") == 0) 
-          st.push(M_E); 
-        else if (strcmp(it->str().c_str(),"pi") == 0) {
-          cout << M_PI << endl;
-          st.push(M_PI);
-
+      if (it->str().find_first_not_of("+*/-^%") != it->str().npos) {
+        // cout << it->str().c_str() << "   ";
+        switch(it->str()[0]) {
+          case 'e': st.push( M_E ); break;
+          case 'p': st.push( M_PI ); break;
+          default: 
+            st.push( atof(it->str().c_str()) ); break;
         }
-        else 
-          st.push(atof(it->str().c_str()));
-        
       } else {
         double op2 = st.top(); st.pop();
         double op1 = st.top(); st.pop();
@@ -56,9 +53,10 @@ int main(int argc, char **argv) {
           case '*': st.push( op1 * op2 ); break;
           case '/': st.push( op1 / op2 ); break;
           case '^': st.push( pow(op1, op2) ); break;
+          case '%': st.push( fmod(op1, op2) ); break;
         }
       }
     }
-    if (!st.empty()) cout << "= " << st.top() << endl;
+    if (!st.empty()) cout << " = " << st.top() << endl;
   return 0;
 }
