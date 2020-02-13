@@ -23,7 +23,7 @@ using namespace std;
 stack<double> st;
 string instr;
 string num_pattern("(\\+|-)?[0-9]+(\\.[0-9]*)?");
-string sym_pattern("[(chi|(pi)|ln|e)]");
+string sym_pattern("[(chi|(?:pi)|ln|e)]");
 string op_pattern("[(\\*|\\/|\\+|\\-|\\^)]");
 regex re(num_pattern+"|"+op_pattern+"|"+sym_pattern);
 //regex re(num_pattern + "|" + op_pattern);
@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
 
     for (;it != it_end; ++it) {
       if (it->str().find_first_not_of("+*/-^%") != it->str().npos) {
-        // cout << it->str().c_str() << "   ";
+        cout << it->str().c_str() << "   ";
         switch(it->str()[0]) {
           case 'e': st.push( M_E ); break;
           case 'p': st.push( M_PI ); break;
