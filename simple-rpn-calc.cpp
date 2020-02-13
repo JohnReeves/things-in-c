@@ -23,7 +23,7 @@ using namespace std;
 stack<double> st;
 string instr;
 string num_pattern("(\\+|-)?[0-9]+(\\.[0-9]*)?");
-string op_pattern("[+*/-]");
+string op_pattern("[(+)(*)(\\/)(\\-)(\\^)]");
 regex re(num_pattern + "|" + op_pattern);
 
 int main(int argc, char **argv) {
@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
     sregex_iterator it_end;
 
     for (;it != it_end; ++it) {
-      if (it->str().find_first_not_of("+*/-") != it->str().npos) {
+      if (it->str().find_first_not_of("+*/-^") != it->str().npos) {
         st.push(atof(it->str().c_str()));
       } else {
         double op2 = st.top(); st.pop();
@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
           case '-': st.push( op1 - op2 ); break;
           case '*': st.push( op1 * op2 ); break;
           case '/': st.push( op1 / op2 ); break;
-          //case 'p': st.push( pow(op1, op2) ); break;
+          case '^': st.push( pow(op1, op2) ); break;
         }
       }
     }
