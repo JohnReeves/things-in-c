@@ -23,8 +23,10 @@ using namespace std;
 stack<double> st;
 string instr;
 string num_pattern("(\\+|-)?[0-9]+(\\.[0-9]*)?");
-string op_pattern("[(+)(*)(\\/)(\\-)(\\^)]");
-regex re(num_pattern + "|" + op_pattern);
+string sym_pattern("[(pi|ln|e)]");
+string op_pattern("[(\\*|\\/|\\+|\\-|\\^)]");
+regex re(num_pattern+"|"+op_pattern+"|"+sym_pattern);
+//regex re(num_pattern + "|" + op_pattern);
 
 int main(int argc, char **argv) {
     if (argc == 1) return 0;
@@ -35,7 +37,13 @@ int main(int argc, char **argv) {
 
     for (;it != it_end; ++it) {
       if (it->str().find_first_not_of("+*/-^") != it->str().npos) {
-        st.push(atof(it->str().c_str()));
+        if (strcmp(it->str().c_str(),"e") == 0) 
+          st.push(M_E); 
+        else if (strcmp(it->str().c_str(),"pi") == 0) 
+          st.push(M_PI);
+        else 
+          st.push(atof(it->str().c_str()));
+        
       } else {
         double op2 = st.top(); st.pop();
         double op1 = st.top(); st.pop();
