@@ -40,6 +40,10 @@ int main(int argc, char **argv) {
         switch(it->str()[0]) {
           case 'e': st.push( M_E ); break;
           case 'p': st.push( M_PI ); break;
+          case 'l': cout << it->str().c_str() << "   ";
+            double op1 = st.top(); st.pop();
+            st.push( log10( op1 ) ); break;
+
           default: 
             st.push( atof(it->str().c_str()) ); break;
         }
@@ -53,7 +57,6 @@ int main(int argc, char **argv) {
           case '/': st.push( op1 / op2 ); break;
           case '^': st.push( pow(op1, op2) ); break;
           case '%': st.push( fmod(op1, op2) ); break;
-          case 'l': st.push(op1); st.push( log10(op2) ); break;
         }
       }
     }
