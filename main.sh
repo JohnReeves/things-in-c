@@ -45,8 +45,8 @@ clang++ -std=c++11 -o rpn-calcpp simple-rpn-calc.cpp
 ./rpn-calcpp '10 10 -' # 0
 ./rpn-calcpp '10 10 *' # 100
 ./rpn-calcpp '2 e *' # 5.43656
-./rpn-calcpp '2 p +' # 5.1415926
 ./rpn-calcpp '2 pi +' # 5.1415926
+./rpn-calcpp '2 pi *' # 5.1415926
 ./rpn-calcpp '10 10 /' # 1
 ./rpn-calcpp '10 0 ^' # 1
 ./rpn-calcpp '10 1 ^' # 10
@@ -57,3 +57,4 @@ clang++ -std=c++11 -o rpn-calcpp simple-rpn-calc.cpp
 ./rpn-calcpp '15 7 3 1 + − ÷ 3 × 3 4 1 + + -' # -5
 ./rpn-calcpp '15 7 3 1 + − ÷ 3 ^ 3 4 1 +'
 ./rpn-calcpp '12 2 %' # 2
+./rpn-calcpp '1000 ln' # 2

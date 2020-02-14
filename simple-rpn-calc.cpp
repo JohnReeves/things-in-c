@@ -23,10 +23,9 @@ using namespace std;
 stack<double> st;
 string instr;
 string num_pattern("(\\+|-)?[0-9]+(\\.[0-9]*)?");
-string sym_pattern("[(chi|(?:pi)|ln|e)]");
-string op_pattern("[(\\*|\\/|\\+|\\-|\\^)]");
+string sym_pattern("(chi|pi|xi|e)");
+string op_pattern("(\\*|\\/|\\+|\\-|\\^|ln)");
 regex re(num_pattern+"|"+op_pattern+"|"+sym_pattern);
-//regex re(num_pattern + "|" + op_pattern);
 
 int main(int argc, char **argv) {
     if (argc == 1) return 0;
@@ -54,6 +53,7 @@ int main(int argc, char **argv) {
           case '/': st.push( op1 / op2 ); break;
           case '^': st.push( pow(op1, op2) ); break;
           case '%': st.push( fmod(op1, op2) ); break;
+          case 'l': st.push(op1); st.push( log10(op2) ); break;
         }
       }
     }
