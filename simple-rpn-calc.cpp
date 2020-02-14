@@ -36,14 +36,14 @@ int main(int argc, char **argv) {
 
     for (;it != it_end; ++it) {
       if (it->str().find_first_not_of("+*/-^%") != it->str().npos) {
-        cout << it->str().c_str() << "   ";
+        //cout << it->str().c_str() << "   ";
+        double op1;
         switch(it->str()[0]) {
           case 'e': st.push( M_E ); break;
           case 'p': st.push( M_PI ); break;
-          case 'l': cout << it->str().c_str() << "   ";
-            double op1 = st.top(); st.pop();
-            st.push( log10( op1 ) ); break;
-
+          case 'l': 
+            op1 = st.top(); st.pop();
+            st.push( log( op1 ) ); break;
           default: 
             st.push( atof(it->str().c_str()) ); break;
         }

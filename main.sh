@@ -38,7 +38,7 @@ echo ' '
 #./rpn-calc 10 10 -
 
 # g++ -o rpn-calcpp simple-rpn-calc.cpp
-clang++ -std=c++11 -o rpn-calcpp simple-rpn-calc.cpp
+# clang++ -std=c++11 -o rpn-calcpp simple-rpn-calc.cpp
 ./rpn-calcpp '10 10 +' # 20
 ./rpn-calcpp '10 -10 -' # 20
 ./rpn-calcpp '-10 -10 +' # -20
@@ -57,4 +57,6 @@ clang++ -std=c++11 -o rpn-calcpp simple-rpn-calc.cpp
 ./rpn-calcpp '15 7 3 1 + − ÷ 3 × 3 4 1 + + -' # -5
 ./rpn-calcpp '15 7 3 1 + − ÷ 3 ^ 3 4 1 +'
 ./rpn-calcpp '12 2 %' # 2
-./rpn-calcpp '1000 ln' # 2
+./rpn-calcpp '1000 ln' # unitary operator
+./rpn-calcpp '1000 ln 2 ^' # unitary operator followed by binary operator
+
