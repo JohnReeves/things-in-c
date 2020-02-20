@@ -38,7 +38,7 @@ echo ' '
 #./rpn-calc 10 10 -
 
 # g++ -o rpn-calcpp simple-rpn-calc.cpp
-# clang++ -std=c++11 -o rpn-calcpp simple-rpn-calc.cpp
+clang++ -std=c++11 -o rpn-calcpp simple-rpn-calc.cpp
 ./rpn-calcpp '10 10 +' # 20
 ./rpn-calcpp '10 -10 -' # 20
 ./rpn-calcpp '-10 -10 +' # -20
